@@ -5,7 +5,7 @@ display: inline-block;
 background-color: transparent;
 border-radius: .25rem;
 position: relative; /* Относительное позиционирование */
-2background: #f0f0f0; /* Цвет фона */
+background: #f0f0f0; /* Цвет фона */
 height: 35px; /* Высота блока */
 }
 

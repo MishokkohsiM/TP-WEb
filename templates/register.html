@@ -1,170 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset="utf8">
-        <link rel="stylesheet" href="styles.css" type="text/css">
-        <link rel="stylesheet" href="styles_2.css" type="text/css">
-        <title>7</title>
-    </head>
-    <body>
-       <!-- Шапка -->
-        <div class="row bg-info" style="height: 10vh" >
-             <div  class="col-sm-4 " style="height: 100%;">
-                   <h1 class="mt-3" align="center" >ASK Pupkin</h1>
+{% extends 'ask.html' %}
+{% block content %}
+    <!-- Левая часть -->
+    <div class="col-sm-8 border" style="padding-left: 120px;">
+        <h1 class="mt-4 ml-4">Registration</h1>
+        <p class="ml-4 mt-3" style="color:red;">Sorry, this email address already registered! </p>
+        <!-- Login  -->
+        <div class="row mt-3 ml-4">
+            <div>
+                Login
             </div>
-            <div class="col-sm-4 " style="height: 100%;">
-                    <nav class="navbar navbar-light  mt-3">
-                        <form class="form-inline" style="width: 100%; flex-wrap: nowrap">
-                            <input class="form-control mr-sm-2" style="width:100%" type="text" placeholder="Search">
-                            <button class="btn btn-outline-success my-5 my-sm-0 bg-warning" type="submit" style="color:#942973;">Ask!</button>
-                        </form>
-                    </nav>
-            </div>
-            <div class="col-sm " style="height: 100%;">
-                    <div class="row " style="padding-left: 100px; margin-top: 2.5rem" >
-                        <div>
-                            <a class ="ml-3 text-danger" href="image.jpeg">log in</a>
-                        </div>
-                        <div>
-                            <a class ="ml-3 text-danger" href="#">register</a>
-                        </div>
-                    </div>
-            </div>
-
-        </div>
-        <!-- Меню -->
-        <div class="row" style="height: 90vh">
-             <!-- Левая часть -->
-            <div  class="col-sm-8 border" style="padding-left: 120px;" >
-                <h1 class="mt-4 ml-4">Registration</h1>
-                <p class="ml-4 mt-3"style="color:red;">Sorry, this email address already registered! </p>
-                <!-- Login  -->
-                <div class="row mt-3 ml-4">
-                    <div>
-                        Login
-                    </div>
-                    <div style="padding-left: 101px">
-                        <input placeholder="dr_pepper">
-                    </div>
-                </div>
-                <!-- Email  -->
-                <div class="row mt-3 ml-4">
-                    <div>
-                        Email
-                    </div>
-                    <div style="padding-left: 100px">
-                        <input placeholder="dr.pepper@mail.ru">
-                    </div>
-                </div>
-                <!--NickName-->
-                <div class="row mt-3 ml-4">
-                    <div>
-                        NickName
-                    </div>
-                    <div style="padding-left: 66px">
-                        <input placeholder="Dr. Pepper">
-                    </div>
-                </div>
-                <!--Password-->
-                <div class="row mt-3 ml-4">
-                    <div>
-                        Password
-                    </div>
-                    <div style="padding-left: 70px">
-                        <input type="password" placeholder="********">
-                    </div>
-                </div>
-                <div class="row mt-3 ml-4">
-                    <div>
-                        Repeat password
-                    </div>
-                    <div style="padding-left: 16px">
-                        <input type="password" placeholder="********">
-                    </div>
-                </div>
-                <!--Avatar-->
-                <div class="row mt-3 ml-4">
-                    <div>
-                        Upload avatar
-                    </div>
-                    <div class=" " style="padding-left:40px">
-                        <input type="" style="width:130px" placeholder="c:\avatar.png" >
-                        <button class="btn btn-outline-success my-sm-0" style="padding-top: 0.2rem">choose</button>
-                    </div>
-                </div>
-                <!-- Кнопка -->
-                <div class="mt-4" style="padding-left:165px">
-                    <button class="btn btn-outline-success my-sm-0">Register!</button>
-                </div>
-            </div>
-             <!-- Правая часть -->
-            <div class="col-sm-4 " style="padding-left: 0px" >
-                <div class="border" style="height: 45vh">
-                    <h1 class="mt-6 text-dark mx-4 " >Popular Tag</h1>
-                    <ul class="nav mx-3">
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link text-dark" href="#">perl</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+2"><a class="nav-link text-warning mt-2" href="#">python</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link text-danger" href="#">TehnoPark</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link text-secondary" href="#" >MySQL</a></font>
-                        </li>
-                    </ul>
-                    <ul class="nav mx-3" >
-                        <li class="nav-item">
-                            <font size="+4"><a class="nav-link text-dark" href="#">iOS</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+1"><a class="nav-link mt-4 " style="color:#A1DB39;" href="#">JavaScript</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3.5"><a class="nav-link mt-3" style="color: #FA681E;" href="#">Frontend</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link mt-3" style="color: #FA1E9E;" href="#" >Java</a></font>
-                        </li>
-                    </ul>
-<!--                    <ul class="nav mx-3">
-                        <li class="nav-item">
-                            <font size="+2"><a class="nav-link text-dark mt-2" href="#">C/C++</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link text-danger" href="#">Web</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link " style="color: #1EFA57;" href="#">NoSQL</a></font>
-                        </li>
-                        <li class="nav-item">
-                            <font size="+3"><a class="nav-link"  style="color:#324181;" href="#" >Golang</a></font>
-                        </li>
-                    </ul>-->
-                </div>
-                <div class="border" style="height: 50vh">
-                    <h1 class="text-dark mx-4 mt-3">Best Members</h1>
-                    <ul class="nav flex-column mx-3">
-                        <li class="nav-item ">
-                            <a class="nav-link active text-info" href="#">Mr. Freeman</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#">Dr. House</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#">Bender</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#">Queen Victoria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-info" href="#">V. Pupkin</a>
-                        </li>
-                    </ul>
-                </div>
+            <div style="padding-left: 101px">
+                <input placeholder="dr_pepper">
             </div>
         </div>
-    </body>
-</html>
+        <!-- Email  -->
+        <div class="row mt-3 ml-4">
+            <div>
+                Email
+            </div>
+            <div style="padding-left: 100px">
+                <input placeholder="dr.pepper@mail.ru">
+            </div>
+        </div>
+        <!--NickName-->
+        <div class="row mt-3 ml-4">
+            <div>
+                NickName
+            </div>
+            <div style="padding-left: 66px">
+                <input placeholder="Dr. Pepper">
+            </div>
+        </div>
+        <!--Password-->
+        <div class="row mt-3 ml-4">
+            <div>
+                Password
+            </div>
+            <div style="padding-left: 70px">
+                <input type="password" placeholder="********">
+            </div>
+        </div>
+        <div class="row mt-3 ml-4">
+            <div>
+                Repeat password
+            </div>
+            <div style="padding-left: 16px">
+                <input type="password" placeholder="********">
+            </div>
+        </div>
+        <!--Avatar-->
+        <div class="row mt-3 ml-4">
+            <div>
+                Upload avatar
+            </div>
+            <div class=" " style="padding-left:40px">
+                <input type="" style="width:130px" placeholder="c:\avatar.png">
+                <button class="btn btn-outline-success my-sm-0" style="padding-top: 0.2rem">choose</button>
+            </div>
+        </div>
+        <!-- Кнопка -->
+        <div class="mt-4" style="padding-left:165px">
+            <button class="btn btn-outline-success my-sm-0">Register!</button>
+        </div>
+    </div>
+{% endblock %}
