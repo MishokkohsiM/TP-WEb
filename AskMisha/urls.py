@@ -25,7 +25,6 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('register/', views.registration, name='register'),
     path('settings/', views.settings, name='settings'),
-    #path('tag/', views.tag, name='tag'),
     url(r'^tag/(?P<tag_name>[a-z A-Z 0-9 . _ +]+)$', views.tag, name='tag'),
-    path('questions/', views.questions, name='questions'),
+    url(r'^questions/(?P<questions_name>[a-z A-Z 0-9 . _ +]+)$', views.question, name='question'),
 ]

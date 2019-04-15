@@ -1,0 +1,47 @@
+{% load static %}
+{% for question in questions %}
+    <div class="col-md-10">
+        <div class="ml-2 row card flex-md-row mb-4 box-shadow h-md-250 mt-5 border border-warning">
+            <div class="mt-2 ml-2">
+                <img src="{% static "image/image.jpeg" %}" alt="альтернативный текст"
+                     class="rounded-circle ml-1"
+                     width="80" height="80">
+                <!-- Номер -->
+                <div class="row">
+                    <div class="mt-4 ml-4 ">
+                        <input style="width: 2em;" placeholder="5">
+                    </div>
+                    <div>
+                        <div class="col">
+                            <div>
+                                <a href="#"><p class="mt-3  m-0 text-warning">&#9650;</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p class=" text-warning">&#9660;</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Инфа -->
+            <div class="card-body d-flex flex-column align-items-start">
+                <a href="#" style="color: red"><font size="+2">{{ question.title }}</font></a>
+                <P>
+                    {{ question.text }}
+                </P>
+                <div class="row">
+                    <div>
+                        <p class="ml-3">answer<a href="#"> ({{ question.answers_count }})</a></p>
+                    </div>
+                    <div class="ml-3">
+                        <p> Tags:
+                            {% for t in question.tags.all %}
+                                <a href="{% url 'tag' t %}">{{ t }}</a>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
