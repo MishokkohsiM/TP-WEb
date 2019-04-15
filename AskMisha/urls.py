@@ -18,6 +18,7 @@ from django.conf.urls import include, url
 from django.urls import path
 from AskMisha import views
 
+
 urlpatterns = [
     url(r'admin/', admin.site.urls),
     path('', views.index, name="index"),

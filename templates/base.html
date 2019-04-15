@@ -52,59 +52,20 @@
     {% endblock content %}
     <!-- Правая часть -->
     <div class="col-sm-4 " style="padding-left: 0px">
-        <div class="border" style="height: 45vh">
+        <div class="" style="height: 45vh">
             <h1 class="mt-6 text-dark mx-4 ">Popular Tag</h1>
-{#            <ul class="nav mx-3">#}
-                {% for t in tags %}
-                    <p><a href="{% url 'tag' t %}"><span class="text-warning mx-4">{{ t }}</span></a></p>
-                {% endfor %}
-{#            </ul>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+3"><a class="nav-link text-dark" href="#">perl</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+2"><a class="nav-link text-warning mt-2" href="#">python</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+3"><a class="nav-link text-danger" href="#">TehnoPark</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+3"><a class="nav-link text-secondary" href="#" >MySQL</a></font>#}
-            {#                        </li>#}
-            {#                    </ul>#}
-            {#                    <ul class="nav mx-3" >#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+4"><a class="nav-link text-dark" href="#">iOS</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+1"><a class="nav-link mt-4 " style="color:#A1DB39;" href="#">JavaScript</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+3.5"><a class="nav-link mt-3" style="color: #FA681E;" href="#">Frontend</a></font>#}
-            {#                        </li>#}
-            {#                        <li class="nav-item">#}
-            {#                            <font size="+3"><a class="nav-link mt-3" style="color: #FA1E9E;" href="#" >Java</a></font>#}
-            {#                        </li>#}
-            {#                    </ul>#}
+            {% for t in tags %}
+                <p><a href="{% url 'tag' t %}"><span class="text-warning mx-4">{{ t }}</span></a></p>
+            {% endfor %}
         </div>
-        <div class="border" style="height: 50vh">
+        <div class="" style="height: 50vh">
             <h1 class="text-dark mx-4 mt-3">Best Members</h1>
             <ul class="nav flex-column mx-3">
-                <li class="nav-item ">
-                    <a class="nav-link active text-info" href="#">Mr. Freeman</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Dr. House</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Bender</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Queen Victoria</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">V. Pupkin</a>
-                </li>
+                {% for t in users %}
+                    <li class="nav-item ">
+                        <a class="nav-link active text-info" href="#">{{ t.username }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

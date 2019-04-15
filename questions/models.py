@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.db.models import Count
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -16,17 +16,14 @@ class ModelManager(models.Manager):
         return self.order_by('-rating')
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
-    rating = models.IntegerField()
-    avatar = models.ImageField(upload_to='', blank=True)
-
-    def __str__(self):
-        return self.user.username
+class User(AbstractUser):
+    upload = models.ImageField(upload_to='images/ask/%Y/%m/%d', verbose_name='Ссылка картинки')
+    groups = 123
+    user_permissions = 0
 
 
 class Question(models.Model):
-    #author = models.ForeignKey(Profile, blank=True, on_delete=models.DO_NOTHING)
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=64)
     text = models.TextField()
     rating = models.IntegerField(null=True)
@@ -82,7 +79,7 @@ def init_questions():
 
 
 class Answer(models.Model):
-    author = models.ForeignKey(Profile, on_delete=models.DO_NOTHING)
+    author = models.ForeignKey(User, default="", on_delete=models.CASCADE)
     correct = models.BooleanField(default=False)
     question = models.ForeignKey(Question, on_delete=models.DO_NOTHING, related_name="answers")
     text = models.TextField()

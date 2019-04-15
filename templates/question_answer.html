@@ -1,0 +1,56 @@
+{% load static %}
+<div class="">
+    <!-- Вторая  -->
+    {% for i in answers %}
+        <div class="col-md-12 ">
+            <hr class="bg-warning ml-2" style="width:101%;">
+            <div class="ml-2 row card flex-md-row mb-4 box-shadow h-md-250 border border-success">
+                <div class="mt-2 ml-2 ">
+                    <img src="{% static 'image/image.jpeg' %}" alt="альтернативный текст" class="rounded-circle ml-1"
+                         width="80" height="80">
+                    <!-- Номер -->
+                    <div class="row ">
+                        <div class="mt-4 ml-4 ">
+                            <input style="width: 2em;" placeholder="5">
+                        </div>
+                        <div>
+                            <div class="col">
+                                <div>
+                                    <a href="#"><p class="mt-3  m-0 text-warning">&#9650;</p></a>
+                                </div>
+                                <div>
+                                    <a href="#"><p class=" text-warning">&#9660;</p></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Инфа -->
+                <div class="card-body d-flex flex-column align-items-start">
+                    <a href="#" style="color: red"><font size="+2">{{ i.author }}</font></a>
+                    <P>
+                        {{ i.text }}
+                    </P>
+                    <div class="row ml-1 mt-4">
+                        <div>
+                            <input class="border-warning" type="checkbox">
+                        </div>
+                        <div class="ml-2">
+                            Correct!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- Текст  -->
+    <div style="padding-left: 1.2rem">
+                        <textarea class="border border-success form-control" rows="7"  name="text"
+                                  style="outline:none;-moz-appearance:none;border:1px;solid:#999;" placeholder="Really, how ?
+Have no idea about it"></textarea>
+    </div>
+    <!-- Кнопка -->
+    <div class="mt-2" style="margin-left:1rem">
+        <button class="btn btn-outline-success my-sm-0">Answer</button>
+    </div>
+</div>

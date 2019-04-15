@@ -5,8 +5,8 @@ from questions.models import *
 # Register your models here.
 
 
-@admin.register(Profile)
-class ProfileAdmin(admin.ModelAdmin):
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
     pass
 
 

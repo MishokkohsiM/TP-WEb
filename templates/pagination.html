@@ -1,0 +1,18 @@
+{% load static %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination mx-4">
+        {% if paginate.has_previous %}
+            <li class="page-item"><a class="page-link text-dark" href="?page=1">&laquo; first</a></li>
+            <li class="page-item"><a class="page-link text-dark"
+                                     href="?page={{ paginate.previous_page_number }}">{{ paginate.previous_page_number }}</a>
+        {% endif %}
+        <li class="page-item "><a class="page-link text-primary" href="#">{{ paginate.number }}</a>
+            {% if paginate.has_next %}
+                <li class="page-item"><a class="page-link text-dark"
+                                         href="?page={{ paginate.next_page_number }}">{{ paginate.next_page_number }}</a>
+                <li class="page-item">
+                <a class="page-link text-dark" href="?page={{ paginate.paginator.num_pages }}">last
+                    &raquo;</a>
+            {% endif %}
+    </ul>
+</nav>

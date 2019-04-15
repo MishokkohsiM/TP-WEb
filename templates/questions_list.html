@@ -1,11 +1,9 @@
 {% load static %}
-{% for question in questions %}
+{% for question_1 in paginate %}
     <div class="col-md-10">
         <div class="ml-2 row card flex-md-row mb-4 box-shadow h-md-250 mt-5 border border-warning">
             <div class="mt-2 ml-2">
-                <img src="{% static "image/image.jpeg" %}" alt="альтернативный текст"
-                     class="rounded-circle ml-1"
-                     width="80" height="80">
+                <img src= {{ MEDIA_URL }}{{ question_1.author.upload.url }} alt="#" height="60" width="60" class="rounded">
                 <!-- Номер -->
                 <div class="row">
                     <div class="mt-4 ml-4 ">
@@ -25,21 +23,24 @@
             </div>
             <!-- Инфа -->
             <div class="card-body d-flex flex-column align-items-start">
-                <a href="#" style="color: red"><font size="+2">{{ question.title }}</font></a>
+                <a href="{% url 'question' question_1.title %}" style="color: red"><font size="+2">{{ question_1.title }}</font></a>
                 <P>
-                    {{ question.text }}
+                    {{ question_1.text }}
                 </P>
                 <div class="row">
                     <div>
-                        <p class="ml-3">answer<a href="#"> ({{ question.answers_count }})</a></p>
+                        <p class="ml-3">answer<a style="color:#942973;" href="{% url 'question' question_1.title %}"> ({{ question_1.answers_count }})</a></p>
                     </div>
                     <div class="ml-3">
                         <p> Tags:
-                            {% for t in question.tags.all %}
-                                <a href="{% url 'tag' t %}">{{ t }}</a>
+                            {% for t in question_1.tags.all %}
+                                <a style="color:#942973;" href="{% url 'tag' t %}">{{ t }}</a>
                             {% endfor %}
                         </p>
                     </div>
+                </div>
+                <div>
+                    <p class="ml">Author:<a class="ml-2" style="color:#942973;" href="#">{{ question_1.author }}</a></p>
                 </div>
             </div>
         </div>
